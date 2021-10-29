@@ -42,14 +42,19 @@ def write_js_file(file_name:str):
 """// copywrite %s Patrick Farrell
 // created: %s
 
+let colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
+let PHI = 1.618033988749895;
+
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 function draw() {
-  ctx.fillStyle = '#ff6';
+  ctx.fillStyle = colors['yellow'];
   ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = colors['blue'];
+  ctx.fillRect(200, 200, 100, 100*PHI);
 }
 
 
