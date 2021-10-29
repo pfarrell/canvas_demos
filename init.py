@@ -18,7 +18,7 @@ def write_html_file(file_name:str):
 <html dir="ltr" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Rolling</title>
+    <title>%s</title>
     <style>
       html, body {
           overflow: hidden;
@@ -31,7 +31,7 @@ def write_html_file(file_name:str):
   </body>
 </html>
 <!-- copywrite %s patf.net-->
-""" % (file_name, date.today().year)
+""" % (file_name, file_name, date.today().year)
     )
 
 
@@ -45,10 +45,15 @@ def write_js_file(file_name:str):
 let colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
 let PHI = 1.618033988749895;
 
-var canvas = document.querySelector('canvas');
-var ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function animate(draw_func, fps) {
+  window.setTimeout(() => {
+        requestAnimationFrame(draw_func);
+  }, 1000 / fps);
+}
 
 function draw() {
   ctx.fillStyle = colors['yellow'];
@@ -57,6 +62,10 @@ function draw() {
   ctx.fillRect(200, 200, 100, 100*PHI);
 }
 
+var canvas = document.querySelector('canvas');
+var ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
 draw()
 """ % (date.today().year, date.today())
