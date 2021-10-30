@@ -42,6 +42,9 @@ def write_js_file(file_name:str):
 """// copywrite %s Patrick Farrell
 // created: %s
 
+// colors from coolors.com https://coolors.co/4cc9f0-faf09b-cfc891-c4085a-c9c385-4898b0-e8106e
+let colors = {'black': '#031E26', 'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
+
 let colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
 let PHI = 1.618033988749895;
 
