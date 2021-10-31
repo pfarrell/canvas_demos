@@ -1,8 +1,6 @@
 // copywrite 2021 Patrick Farrell
 // created: 2021-10-30
 // colors from coolors.com https://coolors.co/4cc9f0-faf09b-cfc891-c4085a-c9c385-4898b0-e8106e
-let colors = {'black': '#031E26', 'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
-let PHI = 1.618033988749895;
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -43,6 +41,7 @@ function drawDiamond() {
 
 
 function draw() {
+  if(!active) { return; }
   time += 1;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = colors['green'];

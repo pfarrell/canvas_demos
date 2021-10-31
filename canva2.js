@@ -81,14 +81,13 @@ var redPoly= new PolyCustom(5, 50, xCenterCanvas, yCenterCanvas, "#F44336", 1, 1
 
 // main animation loop
 function mainAnimationLoop() {
+  if(!active) { return; }
     // runs animation and clears the canvas each call
-    requestAnimationFrame(mainAnimationLoop);
     ctx.clearRect(0, 0, innerWidth, innerHeight);
-
-    //bkgRectangle.draw();
-    //redRectangle.draw();
+    bkgRectangle.draw();
+    redRectangle.draw();
     redPoly.draw();
 
 }
 
-mainAnimationLoop();
+setInterval(mainAnimationLoop, 100);

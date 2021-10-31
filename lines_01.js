@@ -1,9 +1,6 @@
 // copywrite 2021 Patrick Farrell
 // created: 2021-10-30
 
-let colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
-let PHI = 1.618033988749895;
-
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -15,6 +12,7 @@ function animate(draw_func, fps) {
 }
 
 function draw() {
+  if(!active) { return; }
   time +=1 ;
   ctx.save();
   ctx.beginPath();

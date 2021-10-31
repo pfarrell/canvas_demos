@@ -1,8 +1,6 @@
 // copywrite 2021 Patrick Farrell
 // created: 2021-10-29
 
-const colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
-const PHI = 1.618033988749895;
 const fps=15
 
 var canvas = document.querySelector('canvas');
@@ -16,6 +14,7 @@ function getRandomInt(max) {
 }
 
 function draw() {
+  if(!active) { return; }
   ctx.fillStyle = colors['yellow'];
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = colors['blue'];
@@ -28,10 +27,6 @@ function draw() {
       ctx.fillRect(i*50 + 10, j*50*PHI+10, 50, 50*PHI);
     }
   }
-  window.setTimeout(() => {
-        requestAnimationFrame(draw);
-  }, 1000 / fps);
 }
 
-
-draw()
+setInterval(draw, 100);

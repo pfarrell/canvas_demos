@@ -3,6 +3,7 @@
 
 
 function draw() {
+  if(!active) { return; }
   time += 1;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   if(time % 10 == 0) { startTimes.push([time,randomColor(colors['black'])]); }

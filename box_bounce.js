@@ -3,19 +3,6 @@
 
 // colors from coolors.com https://coolors.co/4cc9f0-faf09b-cfc891-c4085a-c9c385-4898b0-e8106e
 
-let colors = {'green': 'green', 'brown': 'brown', 'aqua': 'aqua', 'black': '#031E26', 'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167', 'orange': 'orange', 'purple': 'purple', 'white': 'white'};
-let PHI = 1.618033988749895;
-
-let Ball = class {
-  constructor(x, y, xdelta, ydelta, color) {
-    this.x = x;
-    this.y = y;
-    this.xdelta = xdelta;
-    this.ydelta = ydelta;
-    this.color = color;
-  }
-}
-
 function randomInt(max) {
   return Math.floor(Math.random() * max);
 }
@@ -43,6 +30,7 @@ function updateBall(ball) {
 }
 
 function draw() {
+  if(!active) { return; }
   ctx.save();
   time += 1
   ctx.fillStyle = bg_color;

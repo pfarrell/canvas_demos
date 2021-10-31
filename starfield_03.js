@@ -3,6 +3,7 @@
 
 
 function draw() {
+  if(!active) { return; }
   time += 1;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   if(time % randomInt(10) == 0) { for(let i=0; i<randomInt(50); i++) {startTimes.push([time,randomColor(colors['black']), randSignFlip()*randomInt(canvas.width), randSignFlip()*randomInt(canvas.height)]); }}

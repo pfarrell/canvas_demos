@@ -2,8 +2,7 @@
 // created: 2021-10-29
 
 //let colors = {'yellow': '#faf09b', 'blue': '#4cc9f0', 'red': '#e8106e'};
-let colors = {'yellow': 'rgba(250, 240, 155, .5)', 'blue': 'rgba(76, 201, 240, .5)', 'red': 'rgba(232, 16, 110, .5)'};
-let PHI = 1.618033988749895;
+colors = {'yellow': 'rgba(250, 240, 155, .5)', 'blue': 'rgba(76, 201, 240, .5)', 'red': 'rgba(232, 16, 110, .5)'};
 
 var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
@@ -30,6 +29,7 @@ function update_positions(pos) {
 }
 
 function draw() {
+  if(!active) { return; }
   time += 1;
   ctx.save();
   //positions = update_positions(positions);
@@ -46,4 +46,4 @@ function draw() {
   animate(draw, 10)
 }
 
-draw()
+setInterval(draw, 50)

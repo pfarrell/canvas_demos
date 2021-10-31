@@ -26,13 +26,9 @@ function drawPoly(ctx, sides, size, xcen, ycen) {
 
 var d = 1;
 
-function init() {
-  window.requestAnimationFrame(draw);
-}
-
 function draw() {
+  if(!active) { return; }
   d += 1;
-  console.log('draw');
   const canvas = document.getElementById('canvas');
   canvas.width = window.innerWidth/2;
   canvas.height = window.innerHeight/2;
@@ -50,10 +46,7 @@ function draw() {
     ctx.translate(-500, -165);
     drawPoly(ctx, i, 150, 500, 165);
   }  
-  //function init() {
-  window.
-  window.requestAnimationFrame(draw);
 }
 // Clear part of the canvas
 // ctx.clearRect(10, 10, 120, 100);
-init();
+setInterval(draw, 10);

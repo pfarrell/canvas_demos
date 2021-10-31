@@ -1,9 +1,6 @@
 // copywrite 2021 Patrick Farrell
 // created: 2021-10-29
 
-let colors = {'yellow': '#fdfcdc', 'green': '#00afb9', 'blue': '#0081a7', 'brown': '#fed9b7', 'red': '#f07167'};
-let PHI = 1.618033988749895;
-
 
 class Position {
   constructor(xpos, ypos, xdir, ydir, speed) {
@@ -36,6 +33,7 @@ var ctog = true;
 var rad = 10;
 
 function draw() {
+  if(!active) { return; }
   ctx.save();
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   time +=1;

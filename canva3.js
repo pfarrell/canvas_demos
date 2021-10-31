@@ -21,11 +21,8 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const ctx = canvas.getContext('2d');
 
-function init() {
-  window.requestAnimationFrame(draw);
-}
-
 function draw() {
+  if(!active) { return; }
   ctx.clearRect(0, 0,window.innerWidth, window.innerHeight);
 
   // Draw yellow background
@@ -38,6 +35,6 @@ function draw() {
   ctx.rotate(-2*Math.PI / 180);
   ctx.translate(-500, -165);
   drawPoly(ctx, sides, 50, 500, 165);
-  window.requestAnimationFrame(draw);
 }
-draw();
+
+setInterval(draw, 10);
